@@ -1,0 +1,68 @@
+.footer {
+  @include mobile {
+    text-align: center;
+  }
+  padding-bottom: 30px;
+  background-color: #f3f3f3;
+  &__title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    min-height: 30px;
+  }
+  &__content {
+    @include mobile {
+      justify-content: center;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    &__pay__img {
+      width: 30px;
+      margin-left: 20px;
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+  &__info {
+    &__download {
+      margin: 30px 0 0 0;
+      @include mobile {
+        margin: 20px 0 0 0;
+        text-align: center;
+      }
+      &__ref {
+        margin: 15px 0;
+        display: flex;
+        cursor: pointer;
+        @include mobile {
+          display: flex;
+          align-items: center;
+          margin: 15px 18%;
+        }
+        &__qr {
+          width: 80px;
+          height: 80px;
+          @include mobile {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        &__system {
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+          }
+          img {
+            width: 122px;
+            margin-left: 8px;
+            @include mobile {
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

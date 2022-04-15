@@ -1,0 +1,120 @@
+.product__card {
+  position: relative;
+  a {
+    &:hover {
+      color: $txt-main-color;
+    }
+  }
+  &__item {
+    padding: 20px;
+    border: 1px solid rgb(235, 233, 233);
+    transition: 0.3s ease;
+    &__img {
+      margin-bottom: 20px;
+      &__view {
+        height: 300px;
+        text-align: center;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &__info {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 1;
+      &__name {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+      &__content {
+        flex: 1;
+        &__price {
+          margin-bottom: 15px;
+          font-size: 1.1rem;
+        }
+        &__rate {
+          font-size: 1.1rem;
+          color: rgb(251, 110, 46);
+        }
+      }
+    }
+  }
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    width: 0%;
+  }
+  &__btn {
+    padding: 4px 8px;
+    position: absolute;
+    top: 6%;
+    outline: none;
+    left: 0;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid transparent;
+    animation: FadeOut 0.7s ease-in-out forwards;
+    -webkit-animation: FadeOut 0.7s ease-in-out forwards;
+    display: none;
+    cursor: pointer;
+    &:hover {
+      background-color: orange;
+      color: #fff;
+    }
+    &__disable {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+.product__card:hover .product__card__btn {
+  display: block;
+}
+.product__card:hover .product__card__canvas {
+  display: block;
+  animation: FadeIn 0.7s ease-in-out forwards;
+  -webkit-animation: FadeIn 0.7s ease-in-out forwards;
+}
+@keyframes FadeIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes FadeIn {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes FadeOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 60%;
+  }
+}
+@-webkit-keyframes FadeOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 60%;
+  }
+}

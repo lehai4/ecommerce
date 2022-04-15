@@ -1,0 +1,175 @@
+.comment-ratings {
+  border-radius: 0.125rem;
+  overflow: hidden;
+  padding: 1.5625rem;
+  overflow: visible;
+  &__header {
+    font-size: 1.125rem;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 1em;
+    text-transform: capitalize;
+  }
+  &__overview {
+    background-color: #fffbf8;
+    min-height: 5rem;
+    border: 1px solid #f9ede5;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 1.875rem;
+    &__friefing {
+      text-align: center;
+      margin-right: 1.875rem;
+      &__score {
+        color: #fb6e2e;
+        font-size: 1.125rem;
+        &__new {
+          font-size: 1.875rem;
+        }
+        &-out-of {
+          font-size: 1.25rem;
+        }
+      }
+      &__star {
+        font-size: 1.25rem;
+        margin-top: 0.625rem;
+        position: relative;
+        display: inline-block;
+      }
+    }
+    &__filters {
+      flex: 1;
+      margin-left: 0.9375rem;
+    }
+    &__filter {
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      height: 2rem;
+      line-height: 2rem;
+      min-width: 6.25rem;
+      text-align: center;
+      padding: 0 0.625rem;
+      color: rgba(0, 0, 0, 0.8);
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      box-sizing: border-box;
+      display: inline-block;
+      margin-right: 0.5rem;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.87);
+      text-transform: capitalize;
+      border-radius: 2px;
+      margin-bottom: 0.3125rem;
+      margin-top: 0.3125rem;
+      &--active {
+        border-color: var(--brand-primary-color, #ee4d2d);
+        fill: var(--brand-primary-color, #ee4d2d);
+        color: var(--brand-primary-color, #ee4d2d);
+      }
+    }
+  }
+  &__list {
+    &--item__single {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+      display: flex;
+      padding: 1rem 0 1rem 1.25rem;
+      &:first-child {
+        padding-top: 0;
+      }
+      &__avatar {
+        width: 2.5rem;
+        margin-right: 0.625rem;
+        text-align: center;
+        img {
+          display: inline-block;
+          width: 1.875rem;
+          height: 1.875rem;
+          position: relative;
+          border-radius: 50%;
+          border: 0.0625rem solid rgba(0, 0, 0, 0.09);
+          box-sizing: border-box;
+        }
+      }
+      &__main {
+        flex: 1;
+        &__author-name {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.87);
+          font-size: 0.75rem;
+        }
+        &__star {
+          display: flex;
+          margin-top: 0.375rem;
+        }
+        &__time {
+          margin-top: 0.75rem;
+          font-size: 0.75rem;
+          color: rgba(0, 0, 0, 0.54);
+        }
+        &__content {
+          position: relative;
+          box-sizing: border-box;
+          margin: 0.9375rem 0;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: rgba(0, 0, 0, 0.87);
+          word-break: break-word;
+          white-space: pre-wrap;
+        }
+        &__image {
+          margin-top: 0.9375rem;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          img {
+            margin-left: 8px;
+            max-width: 72px;
+            &:first-child {
+              margin: 0;
+            }
+            &:nth-of-type(5) {
+              display: none;
+            }
+            &:nth-of-type(6) {
+              display: none;
+            }
+            &:nth-of-type(7) {
+              display: none;
+            }
+            &:nth-of-type(8) {
+              display: none;
+            }
+          }
+        }
+        &--action {
+          margin-top: 1.25rem;
+          display: flex;
+          color: rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+          &__like__button {
+            margin-right: 0.25rem;
+            color: rgba(0, 0, 0, 0.2);
+          }
+          &__like__count {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    &--pagination {
+      margin-top: 1.25rem;
+      color: #ee4d2d;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+}

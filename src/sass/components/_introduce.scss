@@ -1,0 +1,12 @@
+.intro {
+  // background: #f3f3f3;
+  &__content {
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}
