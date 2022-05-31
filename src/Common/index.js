@@ -26,6 +26,7 @@ export { default as Refer } from "../components/Refer";
 export { default as ContactIcon } from "../components/ContactIcon";
 export { default as ProductCart } from "../components/ProductCard";
 export { default as ProductHandle } from "../components/ProductHandle";
+export { default as InputField } from "../components/InputFiled";
 export { default as ProductView } from "../components/ProductView";
 export { default as PolicyProductView } from "../components/PolicyProductView";
 export { default as Pagination } from "../components/Pagination";

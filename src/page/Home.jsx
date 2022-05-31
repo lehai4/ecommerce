@@ -34,8 +34,11 @@ const Home = ({ data }) => {
         <SectionBody>
           <Grid col={4} mdCol={2} smCol={1} gap={30}>
             {data.map((item) => {
-              if (item.category === "men's clothing")
-                return <ProductCart key={item.id} data={item} />;
+              return (
+                item.category === "men's clothing" && (
+                  <ProductCart key={item.id} data={item} />
+                )
+              );
             })}
           </Grid>
         </SectionBody>
@@ -45,9 +48,11 @@ const Home = ({ data }) => {
         <SectionBody>
           <Grid col={4} mdCol={2} smCol={1} gap={30}>
             {data.map((item) => {
-              if (item.category === "women's clothing") {
-                return <ProductCart key={item.id} data={item} />;
-              }
+              return (
+                item.category === "women's clothing" && (
+                  <ProductCart key={item.id} data={item} />
+                )
+              );
             })}
           </Grid>
         </SectionBody>
@@ -57,8 +62,11 @@ const Home = ({ data }) => {
         <SectionBody>
           <Grid col={4} mdCol={2} smCol={1} gap={30}>
             {data.map((item) => {
-              if (item.category === "electronics")
-                return <ProductCart key={item.id} data={item} />;
+              return (
+                item.category === "electronics" && (
+                  <ProductCart key={item.id} data={item} />
+                )
+              );
             })}
           </Grid>
         </SectionBody>
@@ -68,8 +76,11 @@ const Home = ({ data }) => {
         <SectionBody>
           <Grid col={4} mdCol={2} smCol={1} gap={30}>
             {data.map((item) => {
-              if (item.category === "jewelery")
-                return <ProductCart key={item.id} data={item} />;
+              return (
+                item.category === "jewelery" && (
+                  <ProductCart key={item.id} data={item} />
+                )
+              );
             })}
           </Grid>
         </SectionBody>

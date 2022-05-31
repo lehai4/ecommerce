@@ -12,7 +12,7 @@ export const CartTotalSlicer = createSlice({
   },
   reducers: {
     getTotal: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.cartTotal = [action.payload];
     },
   },

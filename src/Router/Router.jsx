@@ -30,7 +30,7 @@ const Router = () => {
     const start = Math.floor(Math.random() * (max - min) + min);
     return datas.slice(start, start + count);
   };
-  const getProductBySlug = (slug) => datas.find((e) => e.id == slug);
+  const getProductBySlug = (slug) => datas.find((e) => e.id === Number(slug));
   const getCartItemDetails = (cartItems) => {
     let res = [];
     if (cartItems.length > 0) {

@@ -4,7 +4,7 @@ import GoogleButton from "react-google-button";
 import { useFormik } from "formik";
 
 import * as Yup from "yup";
-import { Helmet, Button } from "../Common";
+import { Helmet, Button, InputField } from "../Common";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 const Login = () => {
@@ -51,32 +51,20 @@ const Login = () => {
         <div className="login__name">Login</div>
         <form className="form" onSubmit={formik.handleSubmit}>
           <div className="form__group">
-            <input
-              placeholder="Enter your email..."
-              type="email"
-              id="email"
-              name="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              ref={refInputEmail}
-              aria-required="true"
-              aria-label="email"
+            <InputField
+              {...formik}
+              label="email"
+              refInputType={refInputEmail}
             />
             {formik.errors.email && (
               <p className="error">{formik.errors.email}</p>
             )}
           </div>
           <div className="form__group">
-            <input
-              placeholder="Enter your password..."
-              type="password"
-              id="password"
-              name="password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              ref={refInputPassword}
-              aria-required="true"
-              aria-label="password"
+            <InputField
+              {...formik}
+              label="password"
+              refInputType={refInputPassword}
             />
             {formik.errors.password && (
               <p className="error">{formik.errors.password}</p>

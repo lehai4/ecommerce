@@ -33,6 +33,7 @@ const Comment = (props) => {
       setEvaluate(Number(result.name.slice(0, 1)));
     }
   }, [active]);
+
   return (
     <div
       className="comment-container"
@@ -106,9 +107,9 @@ const Comment = (props) => {
                     </div>
                     <div className="comment-ratings__list--item__single__main__image">
                       {comment.image.map((item, id) => {
-                        if (item.url) {
-                          return <img src={item.url} alt="" key={id} />;
-                        }
+                        return (
+                          item.url && <img src={item.url} alt="" key={id} />
+                        );
                       })}
                     </div>
                     <div className="comment-ratings__list--item__single__main--action">
@@ -140,7 +141,7 @@ const Comment = (props) => {
             ) : (
               <>
                 <span onClick={handleChangeLittle}>Rút gọn</span>
-                <i class="bx bx-chevrons-left"></i>
+                <i className="bx bx-chevrons-left"></i>
               </>
             )}
           </div>

@@ -8,7 +8,6 @@ import { numberWithCommas, Helmet, Banner, Button, CartItem } from "../Common";
 const Cart = (props) => {
   const { getCartItemDetails } = props;
   const carts = useSelector((state) => state.cart.carts);
-  const cartTotals = useSelector((state) => state.cartTotal.cartTotal);
   const [cartProduct, setCartProduct] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
   const navigate = useNavigate();
@@ -30,10 +29,6 @@ const Cart = (props) => {
     }, 0);
     setTotalCart(result);
   }, [carts]);
-  useEffect(() => {
-    console.log(cartTotals);
-    console.log(carts);
-  }, [cartTotals]);
   return (
     <Fragment>
       <Helmet title="cart">
