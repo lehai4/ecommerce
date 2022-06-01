@@ -58,6 +58,10 @@
 }
 .search {
   display: flex;
+  justify-content: right;
+  @include mobile {
+    justify-content: center;
+  }
   &__input {
     width: 15%;
     transform: translateX(-50%);

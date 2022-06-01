@@ -23,12 +23,13 @@ const Cart = (props) => {
       );
   };
   useEffect(() => {
-    setCartProduct(getCartItemDetails(carts.slice(1)));
+    setCartProduct(getCartItemDetails(carts));
     let result = carts.reduce((total, currentValue) => {
       return Number(total) + currentValue.price;
     }, 0);
     setTotalCart(result);
   }, [carts]);
+  console.log(carts);
   return (
     <Fragment>
       <Helmet title="cart">
@@ -51,7 +52,7 @@ const Cart = (props) => {
           </div>
           <div className="cart__info">
             <div className="cart__info__txt">
-              <p>Shopping Bag ({carts.slice(1).length})</p>
+              <p>Shopping Bag ({carts.length})</p>
               <div className="cart__info__txt__price">
                 <span>Thành tiền</span>
                 <span>{numberWithCommas(totalCart)}$</span>

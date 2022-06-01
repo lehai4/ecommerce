@@ -16,11 +16,10 @@ const ProductCard = (props) => {
     if (user) {
       setAdded(true);
       const newItems = {
+        id: data.id,
         title: data.title,
-        description: data.description,
-        price: data.price,
         image: data.image,
-        quantity: 1,
+        price: data.price,
       };
       dispatch(addCart(newItems));
     } else if (!user) {

@@ -57,12 +57,7 @@ const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route
         path="/cart"
-        element={
-          <Cart
-            datas={datas}
-            getCartItemDetails={productData.getCartItemDetails}
-          />
-        }
+        element={<Cart getCartItemDetails={productData.getCartItemDetails} />}
       />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

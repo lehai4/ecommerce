@@ -30,11 +30,6 @@ export { default as InputField } from "../components/InputFiled";
 export { default as ProductView } from "../components/ProductView";
 export { default as PolicyProductView } from "../components/PolicyProductView";
 export { default as Pagination } from "../components/Pagination";
-export {
-  default as Section,
-  SectionBody,
-  SectionTitle,
-} from "../components/Section";
 export { default as policy, policyProductView } from "../MocksApi/policy";
 export { default as FakeUser } from "../MocksApi/UserFake";
 export { default as options, colors } from "../MocksApi/FakerView";
@@ -44,3 +39,8 @@ export { default as stars } from "../MocksApi/FakeStar";
 export { default as promotion } from "../MocksApi/promotion";
 export { default as CommentFake, CommentData } from "../MocksApi/CommentFake";
 export { default as numberWithCommas } from "../utils/numberWithCommas";
+export {
+  default as Section,
+  SectionBody,
+  SectionTitle,
+} from "../components/Section";

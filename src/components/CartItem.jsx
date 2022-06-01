@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { deleteCart } from "../redux/cartItemSlice";
-import { getTotal } from "../redux/cartTotalSlice";
 const CartItem = (props) => {
   const { item } = props;
   const { e } = item;
@@ -35,12 +34,12 @@ const CartItem = (props) => {
     setPrice(result);
   }, [quantity]);
   useEffect(() => {
-    const newTotal = {
-      price: price,
-      quantity: quantity,
-      title: e.title,
-    };
-    dispatch(getTotal(newTotal));
+    // const newTotal = {
+    //   price: price,
+    //   quantity: quantity,
+    //   title: e.title,
+    // };
+    // dispatch(getTotal(newTotal));
   }, [price]);
   return (
     <div className="cart__item">
