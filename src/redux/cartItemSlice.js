@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initValue = {
-  numberCart: 0,
-  carts: [],
-  _products: [],
-};
+
 export const CartItemSlicer = createSlice({
   name: "cart",
-  initialState: initValue,
+  initialState: {
+    numberCart: 0,
+    carts: [],
+    _products: [],
+  },
   reducers: {
     addCart: (state, action) => {
       if (state.numberCart === 0) {
@@ -37,10 +37,7 @@ export const CartItemSlicer = createSlice({
           state.carts.push(_cart);
         }
       }
-      return {
-        ...state,
-        numberCart: state.numberCart + 1,
-      };
+      state.numberCart++;
     },
     updateCart: (state, action) => {},
     deleteCart: (state, action) => {
@@ -51,7 +48,30 @@ export const CartItemSlicer = createSlice({
         carts: newCarts,
       };
     },
+    decreaseQuantity: (state, action) => {
+      let quantity = state.carts[action.payload].quantity;
+      if (quantity > 1) {
+        state.numberCart--;
+        state.carts[action.payload].quantity--;
+      }
+      return {
+        ...state,
+      };
+    },
+    increaseQuantity: (state, action) => {
+      state.numberCart++;
+      state.carts[action.payload].quantity++;
+      return {
+        ...state,
+      };
+    },
   },
 });
-export const { addCart, updateCart, deleteCart } = CartItemSlicer.actions;
+export const {
+  addCart,
+  updateCart,
+  deleteCart,
+  decreaseQuantity,
+  increaseQuantity,
+} = CartItemSlicer.actions;
 export default CartItemSlicer.reducer;

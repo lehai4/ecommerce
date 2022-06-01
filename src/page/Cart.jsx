@@ -29,7 +29,6 @@ const Cart = (props) => {
     }, 0);
     setTotalCart(result);
   }, [carts]);
-  console.log(carts);
   return (
     <Fragment>
       <Helmet title="cart">

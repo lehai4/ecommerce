@@ -33,14 +33,7 @@ const CartItem = (props) => {
     let result = e.price * quantity;
     setPrice(result);
   }, [quantity]);
-  useEffect(() => {
-    // const newTotal = {
-    //   price: price,
-    //   quantity: quantity,
-    //   title: e.title,
-    // };
-    // dispatch(getTotal(newTotal));
-  }, [price]);
+  useEffect(() => {}, [price]);
   return (
     <div className="cart__item">
       <div className="cart__item__img">
