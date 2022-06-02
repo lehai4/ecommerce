@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { deleteCart } from "../redux/cartItemSlice";
+import {
+  deleteCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../redux/cartItemSlice";
 const CartItem = (props) => {
   const { item } = props;
   const { e } = item;
@@ -21,6 +25,7 @@ const CartItem = (props) => {
   };
   const removeCartItem = () => {
     const removeCart = {
+      id: e.id,
       title: e.title,
       description: e.description,
       price: price,
@@ -33,7 +38,13 @@ const CartItem = (props) => {
     let result = e.price * quantity;
     setPrice(result);
   }, [quantity]);
-  useEffect(() => {}, [price]);
+  useEffect(() => {
+    // let inCre = {
+    //   quantity: quantity,
+    //   price: price,
+    // };
+    // dispatch(increaseQuantity(inCre));
+  }, [price]);
   return (
     <div className="cart__item">
       <div className="cart__item__img">

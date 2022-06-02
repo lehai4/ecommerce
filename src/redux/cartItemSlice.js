@@ -41,11 +41,12 @@ export const CartItemSlicer = createSlice({
     },
     updateCart: (state, action) => {},
     deleteCart: (state, action) => {
-      const newCarts = [...state.carts];
-      newCarts.splice(action.payload, 1);
+      state.numberCart--;
       return {
-        ...state.carts,
-        carts: newCarts,
+        ...state,
+        carts: state.carts.filter((item) => {
+          return item.id !== action.payload.id;
+        }),
       };
     },
     decreaseQuantity: (state, action) => {
@@ -59,11 +60,12 @@ export const CartItemSlicer = createSlice({
       };
     },
     increaseQuantity: (state, action) => {
+      console.log(action.payload);
       state.numberCart++;
-      state.carts[action.payload].quantity++;
-      return {
-        ...state,
-      };
+      // state.carts[action.payload.quantity].quantity++;
+      // return {
+      //   ...state,
+      // };
     },
   },
 });

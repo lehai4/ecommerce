@@ -25,7 +25,7 @@ const Cart = (props) => {
   useEffect(() => {
     setCartProduct(getCartItemDetails(carts));
     let result = carts.reduce((total, currentValue) => {
-      return Number(total) + currentValue.price;
+      return Number(total) + currentValue.price * currentValue.quantity;
     }, 0);
     setTotalCart(result);
   }, [carts]);

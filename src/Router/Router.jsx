@@ -37,7 +37,6 @@ const Router = () => {
       cartItems.forEach((e) => {
         res.push({
           e,
-          product: getProductBySlug(e.slug),
         });
       });
     }

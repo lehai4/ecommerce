@@ -3,11 +3,11 @@ const InputField = (props) => {
   return (
     <>
       <input
-        placeholder="Enter your email..."
+        placeholder={`Enter your ${label}...`}
         type={label}
         id={label}
         name={label}
-        value={props.values.email}
+        value={label === "email" ? props.values.email : props.values.password}
         onChange={props.handleChange}
         ref={refInputType}
         aria-required="true"
