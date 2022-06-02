@@ -42,30 +42,14 @@ export const CartItemSlicer = createSlice({
     updateCart: (state, action) => {},
     deleteCart: (state, action) => {
       state.numberCart--;
-      return {
-        ...state,
-        carts: state.carts.filter((item) => {
-          return item.id !== action.payload.id;
-        }),
-      };
+      let result = state.carts.filter((item) => item.id !== action.payload.id);
+      const newCart = [...result];
+      state.carts = newCart;
     },
-    decreaseQuantity: (state, action) => {
-      let quantity = state.carts[action.payload].quantity;
-      if (quantity > 1) {
-        state.numberCart--;
-        state.carts[action.payload].quantity--;
-      }
-      return {
-        ...state,
-      };
-    },
+    decreaseQuantity: (state, action) => {},
     increaseQuantity: (state, action) => {
       console.log(action.payload);
-      state.numberCart++;
-      // state.carts[action.payload.quantity].quantity++;
-      // return {
-      //   ...state,
-      // };
+      // state.numberCart++;
     },
   },
 });

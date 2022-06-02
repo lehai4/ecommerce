@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import {
@@ -34,17 +34,7 @@ const CartItem = (props) => {
     };
     dispatch(deleteCart(removeCart));
   };
-  useEffect(() => {
-    let result = e.price * quantity;
-    setPrice(result);
-  }, [quantity]);
-  useEffect(() => {
-    // let inCre = {
-    //   quantity: quantity,
-    //   price: price,
-    // };
-    // dispatch(increaseQuantity(inCre));
-  }, [price]);
+
   return (
     <div className="cart__item">
       <div className="cart__item__img">
