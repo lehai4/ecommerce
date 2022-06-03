@@ -15,12 +15,24 @@ const CartItem = (props) => {
   const handleChangQuantity = (type = null) => {
     if (type === "PLUS") {
       setQuantity((prev) => prev + 1);
+      dispatch(
+        increaseQuantity({
+          quantity: quantity,
+          price: price,
+        })
+      );
     } else if (type === "MINUS") {
       setQuantity((prev) => prev - 1);
       if (quantity === 1) {
         alert("tối thiểu là một sản phẩm ");
         setQuantity(1);
       }
+      dispatch(
+        decreaseQuantity({
+          quantity: quantity,
+          price: price,
+        })
+      );
     }
   };
   const removeCartItem = () => {
@@ -44,7 +56,9 @@ const CartItem = (props) => {
         <div className="cart__item__info__name">
           <span>{e.title}</span>
         </div>
-        <div className="cart__item__info__name__price">{price}$</div>
+        <div className="cart__item__info__name__price">
+          {price.toLocaleString("en-US")}$
+        </div>
         <div className="cart__item__info__quantity">
           <div className="product__view__right__item__quantity">
             <div

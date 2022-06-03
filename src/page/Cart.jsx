@@ -1,26 +1,36 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 import { numberWithCommas, Helmet, Banner, Button, CartItem } from "../Common";
+import { resetCart } from "../redux/cartItemSlice";
 const Cart = (props) => {
   const { getCartItemDetails } = props;
   const carts = useSelector((state) => state.cart.carts);
   const [cartProduct, setCartProduct] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleOrder = () => {
     if (cartProduct.length === 0) {
-      toast.error("Không ổn rồi. Giỏ hàng bạn đang trống!!");
+      toast.warning("Giỏ hàng bạn đang trống. Vui lòng đặt hàng trước ^ ^");
       setTimeout(() => {
         navigate("/catelog");
       }, 3500);
-    } else
-      toast.success(
-        "Cảm ơn bạn đã mua hàng. Vui lòng kiểm tra mail sau 3 ngày ^^"
+    } else {
+      dispatch(
+        resetCart({
+          carts: carts,
+          Total: totalCart,
+        })
       );
+      toast.success(
+        "Cảm ơn bạn đã mua hàng. Vui lòng kiểm tra mail sau 3 ngày ^ ^"
+      );
+    }
   };
   useEffect(() => {
     setCartProduct(getCartItemDetails(carts));

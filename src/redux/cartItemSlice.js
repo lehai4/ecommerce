@@ -5,7 +5,6 @@ export const CartItemSlicer = createSlice({
   initialState: {
     numberCart: 0,
     carts: [],
-    _products: [],
   },
   reducers: {
     addCart: (state, action) => {
@@ -46,6 +45,17 @@ export const CartItemSlicer = createSlice({
       const newCart = [...result];
       state.carts = newCart;
     },
+    resetCart: (state, action) => {
+      // Gửi đơn hàng đi
+      // action.payload: Gửi data thông tin đặt hàng. Tiến hành giao hàng
+      console.log(action.payload);
+      // Cập nhập giỏ hàng
+      return {
+        ...state,
+        numberCart: 0,
+        carts: [],
+      };
+    },
     decreaseQuantity: (state, action) => {},
     increaseQuantity: (state, action) => {
       console.log(action.payload);
@@ -57,6 +67,7 @@ export const {
   addCart,
   updateCart,
   deleteCart,
+  resetCart,
   decreaseQuantity,
   increaseQuantity,
 } = CartItemSlicer.actions;

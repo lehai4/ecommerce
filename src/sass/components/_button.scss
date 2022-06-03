@@ -35,7 +35,7 @@
     :hover {
       background-color: rgb(158, 176, 226);
       color: white;
-      border: none !important;
+      border-color: rgb(158, 176, 226);
       transition: all 0.2s ease-in-out infinite forwards;
     }
     &__all {
@@ -50,7 +50,7 @@
       font-weight: 400;
       &--active {
         background-color: rgb(158, 176, 226);
-        border: rgb(158, 176, 226);
+        border: 1px solid rgb(158, 176, 226);
         color: white;
       }
     }
