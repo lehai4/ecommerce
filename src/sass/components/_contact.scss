@@ -1,5 +1,25 @@
 .contact {
   padding: 0 70px;
+  margin: 0 auto;
+  max-width: 1250px;
+  &__info {
+    font-weight: 300;
+    text-align: center;
+    align-items: center;
+    &__name {
+      line-height: 2;
+      span {
+        font-size: 1.225rem;
+      }
+    }
+    &__content {
+      margin: 25px 0;
+      p {
+        font-size: 0.975rem;
+        line-height: 1.6;
+      }
+    }
+  }
 }
 .section__title::after {
   content: none !important;

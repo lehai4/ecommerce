@@ -24,6 +24,8 @@ export { default as IntroDuce } from "../components/IntroDuce";
 export { default as Rating } from "../components/Rating";
 export { default as Refer } from "../components/Refer";
 export { default as ContactIcon } from "../components/ContactIcon";
+export { default as ContactInfo } from "../components/ContactInfo";
+export { default as ContactFeedBack } from "../components/ContactFeedBack";
 export { default as ProductCart } from "../components/ProductCard";
 export { default as ProductHandle } from "../components/ProductHandle";
 export { default as InputField } from "../components/InputFiled";
@@ -37,6 +39,7 @@ export { default as introDucer, IntroDucerData } from "../MocksApi/IntroDuce";
 export { default as FakeButton } from "../MocksApi/FakeButton";
 export { default as stars } from "../MocksApi/FakeStar";
 export { default as promotion } from "../MocksApi/promotion";
+export { default as ContactFake } from "../MocksApi/Contact";
 export { default as CommentFake, CommentData } from "../MocksApi/CommentFake";
 export { default as numberWithCommas } from "../utils/numberWithCommas";
 export {
