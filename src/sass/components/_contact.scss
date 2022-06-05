@@ -1,9 +1,9 @@
 .contact {
   padding: 0 70px;
   margin: 0 auto;
-  max-width: 1250px;
+  max-width: 1150px;
+  font-weight: 300;
   &__info {
-    font-weight: 300;
     text-align: center;
     align-items: center;
     &__name {
@@ -17,6 +17,40 @@
       p {
         font-size: 0.975rem;
         line-height: 1.6;
+      }
+    }
+  }
+  &__feedback {
+    &__title {
+      text-align: center;
+    }
+    &__content {
+      width: 100%;
+      margin: 0 25px;
+    }
+  }
+  &__form {
+    .together {
+    }
+    &__label {
+      display: inherit;
+      margin-top: 12px;
+      & > :first-child {
+        margin: 0;
+      }
+    }
+    &__input {
+      $border-width: 3px;
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      border: none;
+      border-bottom: 1px solid #111;
+      &:hover {
+        border-bottom-width: $border-width;
+      }
+      &:focus {
+        border-bottom-width: $border-width;
       }
     }
   }

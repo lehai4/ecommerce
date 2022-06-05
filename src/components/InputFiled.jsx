@@ -1,13 +1,22 @@
 const InputField = (props) => {
-  const { refInputType, label } = props;
+  const { refInputType, label, className, placeholder } = props;
   return (
     <>
       <input
-        placeholder={`Enter your ${label}...`}
+        placeholder={!placeholder ? `Enter your ${label}...` : ""}
+        className={className !== "undefined" ? className : ""}
         type={label}
         id={label}
         name={label}
-        value={label === "email" ? props.values.email : props.values.password}
+        value={
+          label === "firstName"
+            ? props.values.firstName
+            : label === "lastName"
+            ? props.values.lastName
+            : label === "email"
+            ? props.values.email
+            : props.values.message
+        }
         onChange={props.handleChange}
         ref={refInputType}
         aria-required="true"
