@@ -102,7 +102,9 @@ const ContactFeedBack = () => {
                   <p className="error">{formik.errors.message}</p>
                 )}
               </div>
-              <button type="submit">Gửi</button>
+              <button type="submit" className="contact__form__submit">
+                Gửi
+              </button>
             </form>
           </Grid>
         </div>

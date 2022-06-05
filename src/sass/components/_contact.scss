@@ -13,7 +13,6 @@
       }
     }
     &__content {
-      margin: 25px 0;
       p {
         font-size: 0.975rem;
         line-height: 1.6;
@@ -30,8 +29,6 @@
     }
   }
   &__form {
-    .together {
-    }
     &__label {
       display: inherit;
       margin-top: 12px;
@@ -40,17 +37,34 @@
       }
     }
     &__input {
-      $border-width: 3px;
+      --border-width: 0 0 3px 0;
       width: 100%;
-      padding: 8px;
+      padding: 8px 0 8px 8px;
       font-size: 1rem;
-      border: none;
+      border-width: var(--border-width);
       border-bottom: 1px solid #111;
+      box-sizing: border-box;
+      direction: ltr;
+      min-height: 42px;
       &:hover {
-        border-bottom-width: $border-width;
+        border-width: var(--border-width, 1px);
+        border-style: solid;
       }
-      &:focus {
-        border-bottom-width: $border-width;
+      &:not(:invalid):focus {
+        border-width: var(--border-width, 1px);
+      }
+    }
+    &__submit {
+      cursor: pointer;
+      width: 100%;
+      margin: 20px 0;
+      font-weight: 300;
+      font-size: 1.125rem;
+      border: none;
+      outline: none;
+      background: transparent;
+      &:hover {
+        color: rgb(233, 138, 138);
       }
     }
   }

@@ -23,7 +23,9 @@ const Contact = () => {
             </Grid>
           </SectionBody>
           <SectionBody>
-            <ContactFeedBack />
+            <Grid col={1} mdCol={1} smCol={1} gap={30}>
+              <ContactFeedBack />
+            </Grid>
           </SectionBody>
         </Section>
       </div>
