@@ -1,6 +1,6 @@
 const ContactFake = [
   {
-    title: "VISIT",
+    title: "ĐỊA ĐIỂM",
     contentList: [
       {
         content: "70/15A Nguyễn Sỹ Sách",
@@ -14,7 +14,7 @@ const ContactFake = [
     ],
   },
   {
-    title: "OPENING HOURS",
+    title: "GIỜ",
     contentList: [
       {
         content: "Mon - Fri: 7am - 10pm",
@@ -28,7 +28,7 @@ const ContactFake = [
     ],
   },
   {
-    title: "CUSTOMER SERVICE",
+    title: "CHĂM SÓC KHÁCH HÀNG",
     contentList: [
       {
         content: "45.01.104.066",

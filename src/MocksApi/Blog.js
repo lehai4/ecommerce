@@ -10,7 +10,7 @@ const blog = [
         "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-1/273529826_1587502258270721_2017072480732351037_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=6Gb_RtNYMisAX-AbX6_&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT_z-khnL4S8eSjjGKy1hdG5XYPUFEGD5vw6uEtQIgHr3w&oe=62A1E687",
     },
     user: "LeChiHai Stone",
-    date: "20 Aug, 2022",
+    date: "20 Jan, 2022",
     status: 1,
   },
   {
@@ -24,7 +24,7 @@ const blog = [
         "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-1/273529826_1587502258270721_2017072480732351037_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=6Gb_RtNYMisAX-AbX6_&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT_z-khnL4S8eSjjGKy1hdG5XYPUFEGD5vw6uEtQIgHr3w&oe=62A1E687",
     },
     user: "LeChiHai Stone",
-    date: "12 Sep, 2022",
+    date: "12 Jan, 2022",
     status: 1,
   },
   {
@@ -38,7 +38,7 @@ const blog = [
         "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-1/273529826_1587502258270721_2017072480732351037_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=6Gb_RtNYMisAX-AbX6_&_nc_ht=scontent.fsgn5-9.fna&oh=00_AT_z-khnL4S8eSjjGKy1hdG5XYPUFEGD5vw6uEtQIgHr3w&oe=62A1E687",
     },
     user: "LeChiHai Stone",
-    date: "07 Dec, 2022",
+    date: "07 Jan, 2022",
     status: 0,
   },
 ];
@@ -46,27 +46,27 @@ const blog = [
 export const recentPosts = [
   {
     id: 1,
-    img: "https://demo.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/images/blog-s1.jpg",
+    img: "https://thoitrangteenthienphuc.vn/upload/news/ao-khoa-kaki-nu-5156.jpg",
     name: "Sed do eiusmod tempor ut",
-    date: "Feb 11, 2021",
+    date: "May 11, 2022",
   },
   {
     id: 2,
-    img: "https://demo.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/images/blog-s4.jpg",
+    img: "https://dongphucunicorn.com/wp-content/uploads/2019/12/ao-khoac-nu-co-non-mau-xanh-navy-800x800.jpg",
     name: "Et dolore magna aliqua",
-    date: "Feb 22, 2021",
+    date: "May 22, 2022",
   },
   {
     id: 3,
     img: "https://demo.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/images/blog-s3.jpg",
     name: "Amkmm Ut enim ad minim",
-    date: "Dec 07, 2021",
+    date: "June 03, 2022",
   },
   {
     id: 4,
     img: "https://demo.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/images/blog-s2.jpg",
     name: "Amkmm Ut enim ad minim",
-    date: "Sep 20, 2021",
+    date: "June 1, 2022",
   },
 ];
 
