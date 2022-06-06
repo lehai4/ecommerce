@@ -1,19 +1,28 @@
+import { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { useRef } from "react";
 import * as Yup from "yup";
-
+import { toast } from "react-toastify";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
 import { Grid, InputField } from "../Common";
 const ContactFeedBack = () => {
+  const [user, setUser] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const refInputFirstName = useRef(null);
   const refInputLastName = useRef(null);
   const refInputEmail = useRef(null);
   const refInputMessage = useRef(null);
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      message: message,
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
@@ -27,7 +36,6 @@ const ContactFeedBack = () => {
       message: Yup.string().required("Required"),
     }),
     onSubmit: (e) => {
-      e.preventDefault();
       if (
         e.firstName === "" ||
         e.lastName === "" ||
@@ -41,10 +49,29 @@ const ContactFeedBack = () => {
           : e.email === ""
           ? refInputEmail.current.focus()
           : refInputMessage.current.focus();
+      } else if (!user) {
+        toast.warning("Vui lòng đăng nhập trước nhé!!");
+        setTimeout(() => {
+          navigate("/login");
+        }, 3500);
       } else {
+        toast.success("Phản hồi của bạn gửi thành công ^ ^");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
       }
     },
   });
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
+      setUser(currentuser);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
   return (
     <div className="contact__feedback">
       <Grid col={1} mdCol={1} smCol={1} gap={30}>
@@ -56,7 +83,7 @@ const ContactFeedBack = () => {
         <div className="contact__feedback__content">
           <Grid col={1} mdcol={1} smCol={1} gap={30}>
             <form className="contact__form" onSubmit={formik.handleSubmit}>
-              <label className="contact__form__label">First Name:</label>
+              <label className="contact__form__label">First Name*</label>
               <InputField
                 refInputType={refInputFirstName}
                 {...formik}
@@ -67,7 +94,7 @@ const ContactFeedBack = () => {
               {formik.errors.firstName && (
                 <p className="error">{formik.errors.firstName}</p>
               )}
-              <label className="contact__form__label">Last Name:</label>
+              <label className="contact__form__label">Last Name*</label>
               <InputField
                 refInputType={refInputLastName}
                 {...formik}
@@ -79,7 +106,7 @@ const ContactFeedBack = () => {
                 <p className="error">{formik.errors.lastName}</p>
               )}
               <div className="together">
-                <label className="contact__form__label">Email:</label>
+                <label className="contact__form__label">Email*</label>
                 <InputField
                   refInputType={refInputEmail}
                   {...formik}
@@ -92,7 +119,7 @@ const ContactFeedBack = () => {
                 )}
               </div>
               <div className="together">
-                <label className="contact__form__label">Message:</label>
+                <label className="contact__form__label">Message*</label>
                 <InputField
                   refInputType={refInputLastName}
                   {...formik}
