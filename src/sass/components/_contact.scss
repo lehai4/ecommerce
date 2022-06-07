@@ -3,6 +3,9 @@
   margin: 0 auto;
   max-width: 1150px;
   font-weight: 300;
+  .section .section__title::after {
+    content: none !important;
+  }
   &__info {
     text-align: center;
     align-items: center;
@@ -26,7 +29,6 @@
     }
     &__content {
       width: 100%;
-      margin: 0 25px;
     }
   }
   &__form {
@@ -69,7 +71,4 @@
       }
     }
   }
-}
-.section__title::after {
-  content: none !important;
 }

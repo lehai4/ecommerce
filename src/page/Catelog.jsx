@@ -2,7 +2,8 @@ import React from "react";
 import { Helmet, Section, SectionBody, ProductHandle, Banner } from "../Common";
 import banner from "../banner.png";
 
-const Catelog = ({ data }) => {
+const Catelog = (props) => {
+  const { data } = props;
   return (
     <React.Fragment>
       <Helmet title="catelog">

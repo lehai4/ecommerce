@@ -8,10 +8,12 @@ export const CartItemSlicer = createSlice({
   },
   reducers: {
     addCart: (state, action) => {
+      let quantity =
+        action.payload.quantity === undefined ? 1 : action.payload.quantity;
       if (state.numberCart === 0) {
         let cart = {
           id: action.payload.id,
-          quantity: 1,
+          quantity: quantity,
           title: action.payload.title,
           image: action.payload.image,
           price: action.payload.price,

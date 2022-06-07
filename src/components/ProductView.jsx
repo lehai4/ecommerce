@@ -59,10 +59,10 @@ const ProductView = ({ product }) => {
   const addToCart = () => {
     if (user) {
       const newProduct = {
-        title: product?.title,
-        description: product?.description,
-        price: product?.price,
-        image: product?.image,
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        image: product.image,
         quantity: quantity,
       };
       dispatch(addCart(newProduct));
@@ -77,8 +77,10 @@ const ProductView = ({ product }) => {
       unsubscribe();
     };
   }, []);
+  useEffect(() => {}, [selectPlace]);
+  useEffect(() => {}, [color]);
   return (
-    <Helmet title={product?.title}>
+    <Helmet title={product.title}>
       <div className="product">
         <div className="product__view">
           <img
@@ -108,7 +110,7 @@ const ProductView = ({ product }) => {
                 <Refer data={product.rating.count} />
               </div>
               <div className="product__view__refer__right__price">
-                <span>{product.price}đ</span>
+                <span>{product.price}$</span>
               </div>
               <div className="product__view__refer__right__tranpost">
                 <div className="product__view__refer__right__tranpost__content">

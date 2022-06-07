@@ -40,7 +40,6 @@ const ProductHanlde = (props) => {
     setProduct(result);
     refInput.current.focus();
   };
-
   return (
     <Fragment>
       <Section>

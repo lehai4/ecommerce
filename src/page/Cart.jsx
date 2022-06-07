@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-import { numberWithCommas, Helmet, Banner, Button, CartItem } from "../Common";
+import { Helmet, Banner, Button, CartItem } from "../Common";
 import { resetCart } from "../redux/cartItemSlice";
 const Cart = (props) => {
   const { getCartItemDetails } = props;
@@ -64,7 +64,7 @@ const Cart = (props) => {
               <p>Shopping Bag ({carts.length})</p>
               <div className="cart__info__txt__price">
                 <span>Thành tiền</span>
-                <span>{numberWithCommas(totalCart)}$</span>
+                <span>{totalCart.toLocaleString("en-US")}$</span>
               </div>
             </div>
             <div className="cart__info__btn">

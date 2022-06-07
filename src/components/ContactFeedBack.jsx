@@ -76,9 +76,7 @@ const ContactFeedBack = () => {
     <div className="contact__feedback">
       <Grid col={1} mdCol={1} smCol={1} gap={30}>
         <div className="contact__feedback__title">
-          <span>
-            Có bất cứ vấn đề liên quan xin để lời phản hồi ở bên dướ<i></i>
-          </span>
+          <span>Có bất cứ vấn đề liên quan xin để lời phản hồi ở bên dưới</span>
         </div>
         <div className="contact__feedback__content">
           <Grid col={1} mdcol={1} smCol={1} gap={30}>

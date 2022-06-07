@@ -31,11 +31,14 @@
       }
       &__img {
         img {
-          max-height: 450px;
+          height: 450px;
+          max-width: 350px;
+          object-fit: contain;
         }
         &--avt {
           margin-bottom: 30px;
-          margin: 25px 0 25px 25px;
+          margin: 25px;
+          padding: 25px;
           @include tablet {
             margin: 25px 0 25px 15px;
           }
@@ -46,6 +49,7 @@
       }
     }
     &__right {
+      flex: 1 1;
       @include tablet {
         width: 60%;
       }
