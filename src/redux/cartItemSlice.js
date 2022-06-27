@@ -7,6 +7,15 @@ export const CartItemSlicer = createSlice({
     carts: [],
   },
   reducers: {
+    clearAllCart: (state) => {
+      state.carts = [];
+      state.numberCart = 0;
+    },
+    getNumberCart(state) {
+      return {
+        ...state,
+      };
+    },
     addCart: (state, action) => {
       let quantity =
         action.payload.quantity === undefined ? 1 : action.payload.quantity;
@@ -40,36 +49,26 @@ export const CartItemSlicer = createSlice({
       }
       state.numberCart++;
     },
-    updateCart: (state, action) => {},
     deleteCart: (state, action) => {
       state.numberCart--;
-      let result = state.carts.filter((item) => item.id !== action.payload.id);
-      const newCart = [...result];
-      state.carts = newCart;
+      state.carts = state.carts.filter((item) => item.id !== action.payload.id);
     },
-    resetCart: (state, action) => {
-      // Gửi đơn hàng đi
-      // action.payload: Gửi data thông tin đặt hàng. Tiến hành giao hàng
-      console.log(action.payload);
-      // Cập nhập giỏ hàng
-      return {
-        ...state,
-        numberCart: 0,
-        carts: [],
-      };
-    },
-    decreaseQuantity: (state, action) => {},
     increaseQuantity: (state, action) => {
-      console.log(action.payload);
-      // state.numberCart++;
+      state.carts = action.payload;
+      state.numberCart = state.carts.reduce((acc, cur) => {
+        return acc + cur.quantity;
+      }, 0);
+    },
+    decreaseQuantity: (state, action) => {
+      state.carts = action.payload;
     },
   },
 });
 export const {
+  clearAllCart,
+  getNumberCart,
   addCart,
-  updateCart,
   deleteCart,
-  resetCart,
   decreaseQuantity,
   increaseQuantity,
 } = CartItemSlicer.actions;

@@ -1,4 +1,3 @@
-export { default as Global } from "../GlobalStyle/GlobalStyle";
 export { default as Cart } from "../page/Cart";
 export { default as Blog } from "../page/Blog";
 export { default as Contact } from "../page/Contact";

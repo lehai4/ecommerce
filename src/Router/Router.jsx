@@ -34,9 +34,9 @@ const Router = () => {
   const getCartItemDetails = (cartItems) => {
     let res = [];
     if (cartItems.length > 0) {
-      cartItems.forEach((e) => {
+      cartItems.forEach((cart) => {
         res.push({
-          e,
+          cart,
         });
       });
     }
@@ -54,10 +54,7 @@ const Router = () => {
       <Route exact path="/" element={<Home data={datas} />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
-      <Route
-        path="/cart"
-        element={<Cart getCartItemDetails={productData.getCartItemDetails} />}
-      />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route exact path="/catelog" element={<Catelog data={datas} />} />

@@ -45,6 +45,14 @@ img {
     max-width: 100%;
   }
 }
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
 a:hover {
   color: $main-color;
 }
