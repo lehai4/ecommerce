@@ -52,7 +52,10 @@ img {
   overflow: hidden;
   margin-bottom: 30px;
 }
-
+.df {
+  display: flex;
+  justify-content: space-between;
+}
 a:hover {
   color: $main-color;
 }

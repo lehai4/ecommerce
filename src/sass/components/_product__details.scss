@@ -68,7 +68,7 @@
       }
       &__rating {
         @include mobile {
-          margin: 30px 10px 15px;
+          margin: 25px 10px;
         }
       }
       &__price {
@@ -131,13 +131,16 @@
             border: 0.5px solid #fb6e2e;
             cursor: pointer;
           }
+          &:last-child {
+            margin: 0;
+          }
         }
       }
       &__count {
         margin: 20px 0;
         display: inline-flex;
         @include mobile {
-          margin: 25px 10px;
+          margin: 0 10px;
         }
         &__title {
           opacity: 0.8;
