@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Helmet, Banner, Button } from "../Common";
 import {
@@ -12,9 +11,8 @@ import {
   decreaseQuantity,
 } from "../redux/cartItemSlice";
 const Cart = () => {
-  const cartSlice = useSelector((state) => state.cart.carts);
-  const getNumberCart = useSelector((state) => state.cart.numberCart);
-  const [carts, setCarts] = useState([...cartSlice]);
+  const getState = useSelector((state) => state.cart);
+  const [carts, setCarts] = useState(getState.carts);
   const [total, setTotal] = useState(0);
   const [check, setCheck] = useState(false);
   const navigate = useNavigate();
@@ -80,9 +78,9 @@ const Cart = () => {
     dispatch(deleteCart(removeCart));
   };
   useEffect(() => {
-    check
-      ? dispatch(decreaseQuantity(carts))
-      : dispatch(increaseQuantity(carts));
+    !check
+      ? dispatch(increaseQuantity(carts))
+      : dispatch(decreaseQuantity(carts));
     setTotal(
       carts.reduce((acc, cur) => {
         let total = cur.price * cur.quantity;
@@ -91,6 +89,9 @@ const Cart = () => {
       }, 0)
     );
   }, [carts]);
+  useEffect(() => {
+    setCarts(getState.carts);
+  }, [getState]);
   return (
     <Fragment>
       <Helmet title="cart">
@@ -154,7 +155,7 @@ const Cart = () => {
           </div>
           <div className="cart__info">
             <div className="cart__info__txt">
-              <p>Shopping Bag ({getNumberCart})</p>
+              <p>Shopping Bag ({getState.numberCart})</p>
               <div className="cart__info__txt__price">
                 <span>Thành tiền</span>
                 <span>{total.toLocaleString("en-US")}$</span>

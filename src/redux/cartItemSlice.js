@@ -61,6 +61,9 @@ export const CartItemSlicer = createSlice({
     },
     decreaseQuantity: (state, action) => {
       state.carts = action.payload;
+      state.numberCart = state.carts.reduce((acc, cur) => {
+        return acc + cur.quantity;
+      }, 0);
     },
   },
 });
