@@ -30,6 +30,7 @@ export { default as ProductHandle } from "../components/ProductHandle";
 export { default as InputField } from "../components/InputFiled";
 export { default as ProductView } from "../components/ProductView";
 export { default as PolicyProductView } from "../components/PolicyProductView";
+export { default as BasicModal } from "../components/Modals";
 export { default as BlogList } from "../components/BlogList";
 export { default as RecentPosts } from "../components/RecentPosts";
 export { default as Pagination } from "../components/Pagination";
