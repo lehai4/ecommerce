@@ -2,7 +2,8 @@
   position: relative;
   a {
     &:hover {
-      color: $txt-main-color;
+      opacity: 0.9;
+      color: #fff;
     }
   }
   &__item {
@@ -52,69 +53,113 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    display: none;
     height: 100%;
-    width: 0%;
-  }
-  &__btn {
-    padding: 4px 8px;
-    position: absolute;
-    top: 6%;
-    outline: none;
-    left: 0;
-    border-radius: 0 3px 3px 0;
-    border: 1px solid transparent;
-    animation: FadeOut 0.7s ease-in-out forwards;
-    -webkit-animation: FadeOut 0.7s ease-in-out forwards;
-    display: none;
-    cursor: pointer;
-    &:hover {
-      background-color: orange;
-      color: #fff;
-    }
-    &__disable {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    width: 0;
   }
 }
 .product__card:hover .product__card__btn {
   display: block;
 }
 .product__card:hover .product__card__canvas {
-  display: block;
-  animation: FadeIn 0.7s ease-in-out forwards;
-  -webkit-animation: FadeIn 0.7s ease-in-out forwards;
+  width: 100%;
+  animation: width 0.7s ease-in-out forwards;
+  -webkit-animation: width 0.7s ease-in-out forwards;
 }
-@keyframes FadeIn {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+////////////////////////////////
+.product-image-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 23px 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-@-webkit-keyframes FadeIn {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+.button {
+  font-size: 12px;
+  justify-content: center;
 }
-@keyframes FadeOut {
-  0% {
-    right: 0;
-  }
-  100% {
-    right: 60%;
-  }
+.button::before {
+  content: "";
+  position: relative;
+  top: 22px;
+  left: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s;
 }
-@-webkit-keyframes FadeOut {
-  0% {
-    right: 0;
-  }
-  100% {
-    right: 60%;
-  }
+.button:hover::before {
+  width: calc(100% - 4px);
+}
+.add_to_cart_button {
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  font-weight: 500;
+  line-height: 2em;
+  letter-spacing: 0.35em;
+  width: auto;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: 0;
+  vertical-align: middle;
+  font-family: Jost, sans-serif;
+  padding: 7px 23px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid transparent;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-image-inner > .button {
+  transition: opacity 0.44s cubic-bezier(0.34, 0.24, 0.09, 0.73),
+    transform 0.44s cubic-bezier(0.34, 0.24, 0.09, 0.73);
+}
+.product__card__item .product-image-inner:hover {
+  opacity: 1;
+  color: #fff;
+}
+.product__card__item .product-image-inner:hover .button {
+  transform: translate(-50%, -50%);
+}
+////////////////////////////////
+.product-additional-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-direction: row;
+  flex: 100%;
+}
+
+.product-additional-content__view-icon {
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.lines {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0.5px;
+  background-color: #111;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

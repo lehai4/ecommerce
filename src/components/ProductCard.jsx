@@ -58,19 +58,31 @@ const ProductCard = (props) => {
               </div>
             </div>
           </div>
-          <div className="product__card__canvas"></div>
-          {isAdded === false ? (
-            <button onClick={handleAdd} className="product__card__btn">
-              ADD TO CARD
-            </button>
-          ) : (
-            <button
-              onClick={handleAdd}
-              className="product__card__btn product__card__btn__disable"
+          <div className="product-image-inner">
+            <Link
+              to={`/catelog/${props.data.id}`}
+              className="button add_to_cart_button"
             >
-              ADDED
-            </button>
-          )}
+              Add to cart
+            </Link>
+            <div className="product-additional-content">
+              <div className="lines"></div>
+              <div className="product-additional-content__view">
+                <button className="product-additional-content__view-icon">
+                  <Link to="#">
+                    <i className="fa-regular fa-eye"></i>
+                  </Link>
+                </button>
+              </div>
+              <div className="product-additional-content__heart">
+                <button className="product-additional-content__view-icon">
+                  <Link to={`add_to_wishlist?=${props.data.id}`}>
+                    <i className="fa-regular fa-heart"></i>
+                  </Link>
+                </button>
+              </div>
+            </div>
+          </div>
         </Link>
       </div>
     </div>
