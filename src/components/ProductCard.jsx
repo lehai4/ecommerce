@@ -87,15 +87,9 @@ const ProductCard = (props) => {
               )}
             </div>
             <div className="product-additional-content__heart">
-              {/* <button
-                // to={`add_to_wishlist?=${props.data.id}`}
-                className="product-additional-content__view-icon"
-              >
-                <i className="fa-regular fa-heart"></i>
-              </button> */}
               <p
-                onClick={handleAdd}
                 className="product-additional-content__view-icon"
+                onClick={handleAdd}
               >
                 <i className="fa-regular fa-heart"></i>
               </p>
