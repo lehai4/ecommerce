@@ -17,12 +17,13 @@ export const CartItemSlicer = createSlice({
       };
     },
     addCart: (state, action) => {
-      let quantity =
-        action.payload.quantity === undefined ? 1 : action.payload.quantity;
+      console.log(action.payload);
+      // let quantity =
+      //   action.payload.quantity === undefined ? 1 : action.payload.quantity;
       if (state.numberCart === 0) {
         let cart = {
           id: action.payload.id,
-          quantity: quantity,
+          quantity: action.payload.quantity,
           title: action.payload.title,
           image: action.payload.image,
           price: action.payload.price,
@@ -30,16 +31,17 @@ export const CartItemSlicer = createSlice({
         state.carts.push(cart);
       } else {
         let check = false;
-        state.carts.map((item, key) => {
+        state.carts.map((item) => {
           if (item.id === action.payload.id) {
-            state.carts[key].quantity++;
+            let _quantityCur = item.quantity + action.payload.quantity;
+            item.quantity = _quantityCur;
             check = true;
           }
         });
         if (!check) {
           let _cart = {
             id: action.payload.id,
-            quantity: 1,
+            quantity: action.payload.quantity,
             title: action.payload.title,
             image: action.payload.image,
             price: action.payload.price,

@@ -92,11 +92,9 @@
     border: 1px solid transparent;
 
     span {
-      font-size: 12px;
       display: inline-flex;
       justify-content: center;
       position: relative;
-
       &::before {
         content: "";
         position: absolute;

@@ -134,24 +134,3 @@ a:hover {
     }
   }
 }
-.facebook__btn {
-  span {
-    button {
-      width: 100%;
-      padding: 15px 10px;
-      font-size: 16px;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      color: #fff;
-      background-color: rgb(66, 133, 244);
-      outline: none;
-      border: none;
-      @include mobile {
-        font-size: 14px;
-        padding: 8px 10px;
-      }
-    }
-  }
-}
